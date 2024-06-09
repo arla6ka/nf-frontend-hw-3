@@ -1,33 +1,34 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Add your custom styles here */
+html {
+  @apply bg-gray-100 text-black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html.dark {
+  @apply bg-gray-900 text-white;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply font-sans;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body.dark .prose {
+  @apply text-white;
+}
+
+body.dark input,
+body.dark textarea {
+  @apply bg-gray-800 text-white;
+}
+
+body.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+body.dark .text-black {
+  @apply text-white;
 }
